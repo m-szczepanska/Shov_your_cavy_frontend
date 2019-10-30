@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial !important;
+  color: white;
+  background-color: #212529;
+}
+
+body {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 40px;
+  margin: auto;
+}
+
+.contener {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
