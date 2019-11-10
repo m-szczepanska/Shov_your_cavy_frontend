@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="add_pig.css" rel="stylesheet">
+
+    <title>Add your pig</title>
+  </head>
+  <body class="text-center" >
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="home.html">Creatder</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="get_all_creatures.html">All piggies<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My piggies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My favourities</a>
+              </li>
+
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+            <button class="user-btn" type="submit" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
+          </div>
+        </nav>
+      </header>
+
+      <form class="form-signin" id="formAjax">
+
+        <h3 class="h3 mb-3 font-weight-normal">Add your pig</h3>
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="name" id="inputName" class="my-form" placeholder="Name" required>
+        <label for="inputAge" class="sr-only">Age</label>
+        <input type="integer" id="inputAge" class="my-form" placeholder="Age" required>
+        <label for="inputSex" class="sr-only">Sex</label>
+        <select id="inputSex" class="my-form" required>
+            <option value=""disabled selected>--Choose a sex--</option>
+            <option value="Not sure">Not sure</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select>
+        <label for="inputBreed" class="sr-only">Breed</label>
+        <select id="inputBreed" class="my-form" required>
+            <option value=""disabled selected>--Choose a breed--</option>
+            <option value="Other">Other</option>
+            <option value="Abyssinian">Abyssinian</option>
+            <option value="American">American</option>
+            <option value="Hairless">Hairless</option>
+            <option value="Himalayan">Himalayan</option>
+            <option value="Rex">Rex</option>
+            <option value="Silkie">Silkie</option>
+            <option value="Teddy">Teddy</option>
+            <option value="White-crested">White-crested</option>
+        </select>
+        <label for="inputColorPattern" class="sr-only">Color Pattern</label>
+        <select id="inputColorPattern" class="my-form" required>
+            <option value=""disabled selected>--Choose a color pattern--</option>
+            <option value="Agouti-Chocolate">Agouti-Chocolate</option>
+            <option value="Agouti-Cream">Agouti-Cream</option>
+            <option value="Agouti-Golden">Agouti-Golden</option>
+            <option value="Agouti-Silver">Agouti-Silver</option>
+            <option value="Albino">Albino</option>
+            <option value="Brindle">Brindle</option>
+            <option value="Mix">Mix</option>
+            <option value="Self-Black">Self-Black</option>
+            <option value="Self-White">Self-White</option>
+            <option value="Self-Red">Self-Red</option>
+            <option value="Red-black">Red-black</option>
+            <option value="White-black">White-black</option>
+            <option value="White-cream">White-cream</option>
+            <option value="White-red">White-red</option>
+        </select>
+        <label for="inputCrossedRainbowBridge" class="sr-only">Crossed Rainbow Bridge</label>
+        <select id="inputCrossedRainbowBridge" class="my-form" required>
+            <option value=""disabled selected>--Crosed Rainbow Bridge--</option>
+            <option value="False">False</option>
+            <option value="True">True</option>
+        </select>
+        <!-- <div class="photo-form">
+          <div>
+            <label for="image_uploads">Upload a pig photo (PNG, JPG)</label>
+            <input type="file" class="myinput" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
+          </div>
+          <div class="preview">
+            <p>No files currently selected for upload</p>
+          </div>
+        </div> -->
+
+        <button class="btn btn-lg btn-primary btn-block" id="add-btn" type="submit">Submit</button>
+      </form>
+    <script src="add_pig.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
