@@ -1,0 +1,161 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial !important;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #212529;
+  text-align: center !important;
+}
+
+/* Header stuff */
+.search-btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 9px 14px; /* Some padding */
+  margin-right: 0.5rem;
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+.search-btn:hover {
+  background-color: RoyalBlue;
+}
+.user-btn {
+  background-color: #ff8d1e; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 7px 14px; /* Some padding */
+  margin-left: 1rem;
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.container {
+    margin: auto;
+}
+
+/* Pig info */
+h3{
+  color: white;
+  margin-top: 18px;
+}
+#pig_info {
+  color: white;
+  padding-left: 38px;
+  padding-top: -3px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.form-signin ol {
+  padding-left: 0;
+}
+
+.form-signin li, div > p {
+  display: flex;
+  background: white;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.form-signin img {
+  padding-left: 3px;
+  height: 64px;
+  order: 1;
+}
+
+.form-signin p {
+  line-height: 20px;
+  padding-left: 45px;
+  margin-bottom: 15px;
+}
+
+.form-signin input {
+    padding: 0px;
+    font-size: 0rem;
+
+}
+
+.form-signin label, .form-signin button {
+  background-color: #7F9CCB;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 1rem;
+  height: auto;
+  color: black;
+}
+
+.form-signin label:hover, .form-signin button:hover {
+  background-color: #2D5BA3;
+  color: white;
+}
+
+.form-signin label:active, .form-signin button:active {
+  background-color: #0D3F8F;
+  color: white;
+}
+
+.rate-photo {
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: auto;
+  border-radius: 20px;
+
+}
+
+.user-btn:hover {
+  background-color:#cc7018;
+}
+
+/* Next & previous photo buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  /* border-radius: 3px 0 0 3px; */
+}
+.prev {
+  left: 6px;
+  /* border-radius: 3px 0 0 3px; */
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
