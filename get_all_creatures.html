@@ -8,32 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="style.css" rel="stylesheet">
 
-    <title>Show your pig!</title>
+    <title>All piggies</title>
   </head>
-  <body onload="loadDoc('http://localhost:8000/creatder/creatures/', myFunction)">
+  <body>
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" href="home.html">Creatder</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="get_all_piggies.html">All piggies<span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="get_all_creatures.html?page=1">All piggies<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My piggies</a>
+                <a class="nav-link" href="user_piggies.html">My piggies</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">My favourities</a>
               </li>
+
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+              <button class="searching-btn" type="submit"><i class="fa fa-search"></i></button>
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             </form>
-            <button class="user-btn" type="submit" onclick="location.href='login.html'"><i class="fa fa-user-circle"></i></button>
-
+            <button class="user-btn" type="submit" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
           </div>
         </nav>
       </header>
@@ -50,19 +51,19 @@
               </div>
 
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <ul class="pagination justify-content-center" >
                 <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                    <a class="page-link" name="prev-link" href="javascript:firstPage();" id="btn_first">Start</a>
+                </li>
+                <li class="page-item" id="li-prev">
+                    <a class="page-link" name="prev-link" href="javascript:prevPage();" id="btn_prev">Previous</a>
+                </li>
+                <div class="d-flex flex-row" id="pagination_item"></div>
+                <li class="page-item" id="li-next">
+                    <a class="page-link" name="next-link" href="javascript:nextPage();" id="btn_next">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" name="next-link" href="javascript:lastPage();" id="btn_last">End</a>
                 </li>
             </ul>
           </nav>
