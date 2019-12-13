@@ -28,6 +28,10 @@ document.getElementById("register-btn").addEventListener("click", function(e){
           var element = document.getElementById('form-signin');
           console.log(xhr.responseText)
         }
+        else if (xhr.readyState == 4 && xhr.status == 400) {
+            var parsed = JSON.parse(xhr.responseText);
+            alert(parsed.non_field_errors[0])
+        }
   }
   xhr.send(JSON.stringify(params))
   e.preventDefault()

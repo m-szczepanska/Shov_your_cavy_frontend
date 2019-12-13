@@ -52,3 +52,12 @@ body {
 .form-signin h1{
   color: white;
 }
+
+#error {
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+.container h1{
+    color: white;
+}

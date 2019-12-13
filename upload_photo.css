@@ -16,7 +16,7 @@ body {
 }
 
 /* Header stuff */
-.search-btn {
+.searching-btn {
   background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   border-radius: .25rem;
@@ -26,7 +26,7 @@ body {
   font-size: 14px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
-.search-btn:hover {
+.searching-btn:hover {
   background-color: RoyalBlue;
 }
 .user-btn {
@@ -54,8 +54,23 @@ h3{
   padding-left: 38px;
   padding-top: -3px;
 }
+.btn-primary-submit {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary-submit:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-primary-submit:active {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
 
-.form-signin {
+.form-signin-upload-pig {
   width: 100%;
   max-width: 330px;
   padding: 15px;
@@ -65,11 +80,11 @@ h3{
   margin-right: auto;
 
 }
-.form-signin ol {
+.form-signin-upload-pig ol {
   padding-left: 0;
 }
 
-.form-signin li, div > p {
+.form-signin-upload-pig li, div > p {
   display: flex;
   background: white;
   font-size: 0.9rem;
@@ -78,25 +93,25 @@ h3{
   list-style-type: none;
 }
 
-.form-signin img {
+.form-signin-upload-pig img {
   padding-left: 3px;
   height: 64px;
   order: 1;
 }
 
-.form-signin p {
+.form-signin-upload-pig p {
   line-height: 20px;
   padding-left: 45px;
   margin-bottom: 15px;
 }
 
-.form-signin input {
+.form-signin-upload-pig input {
     padding: 0px;
     font-size: 0rem;
 
 }
 
-.form-signin label, .form-signin button {
+.form-signin-upload-pig label, .form-signin button {
   background-color: #7F9CCB;
   margin-bottom: 5px;
   margin-top: 5px;
@@ -108,12 +123,12 @@ h3{
   color: black;
 }
 
-.form-signin label:hover, .form-signin button:hover {
+.form-signin-upload-pig label:hover, .form-signin button:hover {
   background-color: #2D5BA3;
   color: white;
 }
 
-.form-signin label:active, .form-signin button:active {
+.form-signin-upload-pig label:active, .form-signin button:active {
   background-color: #0D3F8F;
   color: white;
 }

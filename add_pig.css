@@ -14,7 +14,7 @@ body {
   background-color: #fff;
 }
 
-.search-btn {
+.searching-btn {
   background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   border-radius: .25rem;
@@ -26,7 +26,7 @@ body {
 }
 
 /* Darker background on mouse-over */
-.search-btn:hover {
+.searching-btn:hover {
   background-color: RoyalBlue;
 }
 

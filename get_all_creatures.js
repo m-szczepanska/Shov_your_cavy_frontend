@@ -35,7 +35,7 @@ function multiplyDiv(ident, count, json, user_id) {
           var info_photo = json[i]["creature_card_photo"]
       }
       if (json[i]["owner"]["id"] == user_id) {
-        console.log('dzial')
+
         element.innerHTML += `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">

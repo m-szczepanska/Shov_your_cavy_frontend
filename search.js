@@ -61,5 +61,14 @@ function innerHTMLresponse(json, count, ident) {
             <hr>
           </div>`
       }
-    }
+  } else {
+      element.innerHTML += `
+      <div class="container">
+          <h5 class="text-muted">
+            Your search did not match any creatures.<br>
+            Check if all words are spelled correctly.
+          </h5>
+        </div>`
+
+  }
 }

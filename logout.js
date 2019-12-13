@@ -6,8 +6,10 @@ document.getElementById('logout_link').addEventListener("click", function(e){
   if (localStorage.length !== 0) {
       var user_id = localStorage.getItem("user_id");
       var token = localStorage.getItem("token");
+      var pages_count = localStorage.getItem("pages_count");
       localStorage.removeItem('token')
       localStorage.removeItem('user_id')
+      localStorage.removeItem('pages_count')
   } else {
     console.log("bad browser no storage")
   }

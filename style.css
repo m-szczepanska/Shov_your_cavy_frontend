@@ -50,7 +50,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.search-btn {
+.searching-btn {
   background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   border-radius: .25rem;
@@ -62,7 +62,7 @@ body {
 }
 
 /* Darker background on mouse-over */
-.search-btn:hover {
+.searching-btn:hover {
   background-color: RoyalBlue;
 }
 
@@ -80,6 +80,99 @@ body {
 /* Darker background on mouse-over */
 .user-btn:hover {
   background-color:#cc7018;
+}
+
+#logout_link {
+    /* margin-left: 35rem;
+    margin-top: 3rem; */
+}
+#col-info {
+    margin: auto;
+}
+#user_data {
+    display: flex;
+}
+#password_link {
+    /* margin-left: 35rem; */
+}
+
+.btn-outline-warning {
+    color: #de8c11;
+    border-color: #de8c11;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+
+.marketing h1 {
+    padding: 0;
+}
+.marketing .col-lg-4 {
+  margin-top: 5.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 1px;
+}
+.marketing h2 {
+    margin-top: 1rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 2rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+.own-pig-heading {
+    font-weight: 300;
+}
+.own-pig-info {
+    font-weight: 250;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 35px;
+  }
+  .own-pig-heading{
+    font-size: 25px
+  }
+  .own-pig-info {
+      font-size: 16px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+  .own-pig-heading{
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+  .own-pig-info {
+    margin-bottom: 0.9rem;
 }
 
 

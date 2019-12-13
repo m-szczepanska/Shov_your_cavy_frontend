@@ -35,54 +35,47 @@ function getResponse(url, method, ident) {
 function innerHTMLresponse(json, ident) {
     console.log(json);
     var element = document.getElementById(ident);
-      // element.innerHTML += `
-      //   <div class="col-md-auto" id="col-info">
-      //       <div class="row justify-content-md-left">
-      //           <div class="col-md-auto py-2">
-      //               <strong>Name</strong>
-      //           </div>
-      //           <div class="col-md-auto py-2">
-      //               ${json["name"]}
-      //           </div>
-      //       </div>
-      //       <div class="row justify-content-md-left">
-      //           <div class="col-md-auto py-2">
-      //               <strong>Login</strong>
-      //           </div>
-      //           <div class="col-md-auto py-2">
-      //               ${json["login"]}
-      //           </div>
-      //       </div>
-      //       <div class="row justify-content-md-left">
-      //           <div class="col-md-auto py-2">
-      //               <strong>Email</strong>
-      //           </div>
-      //           <div class="col-md-auto py-2">
-      //               ${json["email"]}
-      //           </div>
-      //       </div>
-      //       <div class="row justify-content-md-left">
-      //           <div class="col-md-auto py-2">
-      //               <strong>About myself</strong>
-      //           </div>
-      //           <div class="col-md-auto py-2">
-      //               ${json["about_myself"]}
-      //           </div>
-      //       </div>
-      //   </div>`
 
-element.innerHTML +=
-` <label for="inputName" class="sr-only">Name</label>
-  <input type="name" id="inputName" class="form-control" value=${json["name"]} required>
-  <label for="inputLogin" class="sr-only">Login</label>
-  <input type="login" id="inputLogin" class="form-control" value=${json["login"]}  readonly>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" value=${json["email"]} required autofocus>
-  <label for="about_myself" class="sr-only">About myself</label>
+  element.innerHTML +=
+  ` <div class="form-group">
+        <label class="sr-only" for="inputName" >Name</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Name</div>
+            </div>
+            <input type="name" id="inputName" class="form-control" value=${json["name"]} >
+        </div>
+    </div>
+    <div class="form-group">
+          <label for="inputLogin" class="sr-only">Login</label>
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">Login</div>
+              </div>
+              <input type="login" id="inputLogin" class="form-control" value=${json["login"]}  readonly>
+          </div>
+    </div>
+    <div class="form-group">
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">Email adress</div>
+              </div>
+              <input type="email" id="inputEmail" class="form-control" value=${json["email"]}>
+          </div>
+    </div>
+    <div class="form-group">
+          <label for="about_myself" class="sr-only">About myself</label>
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">About myself</div>
+              </div>
+              <textarea type="text" id="about_myself" class="form-control" name="text" rows="3" wrap="soft">${json["about_myself"]}</textarea>
+              </div>
+        </div>
 
-  <textarea type="text" id="about_myself" class="form-control" name="text" rows="3" wrap="soft">${json["about_myself"]}</textarea>
-  <button class="btn btn-primary btn-block" id="register-btn" type="submit">Submit changes</button>`
-}
+    <button class="btn btn-primary btn-block" id="register-btn" type="submit">Submit changes</button>`
+  }
 
 // <input type="text" id="about_myself" class="form-control" size="150" maxlength="255" value="${json["about_myself"]}">
 document.querySelector('#formAjax').addEventListener("submit", function(e){

@@ -10,32 +10,33 @@
 
     <title>Show your pig!</title>
   </head>
-  <body onload="loadDoc('http://localhost:8000/creatder/creatures/', myFunction)">
+  <body>
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="#">Creatder</a>
+          <a class="navbar-brand" href="index.html">Creatder</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="get_all_creatures.html">All piggies<span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="get_all_creatures.html?page=1">All piggies<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My piggies</a>
+                <a class="nav-link" href="user_piggies.html">My piggies</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My favourities</a>
+                <a class="nav-link" href="user_votes.html">My votes</a>
               </li>
-
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </form>
-            <button class="user-btn" type="submit" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
+          </ul>
+            <div class="form-inline mt-2 mt-md-0">
+            <!-- <form class="form-inline mt-2 mt-md-0" id="searchForm"> -->
+              <button class="searching-btn" type="submit" onclick="SearchFunction()"><i class="fa fa-search"></i></button>
+              <input class="form-control mr-sm-2" name="q" type="text" id="mySearch" placeholder="Search a pig">
+            <!-- </form> -->
+            <button class="user-btn" type="button" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
           </div>
+      </div>
         </nav>
       </header>
 
@@ -47,8 +48,8 @@
                   <h1 class="jumbotron-heading">Show your cavie and rate other</h1>
                   <p class="lead text-muted">Cute, funny, furry little creatures. Or hairless but still adorable. Rate them or show your pig to the world</p>
                   <p>
-                      <a href="#" class="btn btn-primary my-2">Add pig</a>
-                      <a href="#" class="btn btn-secondary my-2">Rate pig</a>
+                      <a href="add_pig.html" class="btn btn-primary my-2">Add your pig</a>
+                      <a href="get_all_creatures.html?page=1" class="btn btn-secondary my-2">Rate pig</a>
                   </p>
               </div>
           </section>
@@ -64,16 +65,17 @@
 
       </main>
 
-      <footer class="text-muted">
+      <!-- <footer class="text-muted">
           <div class="container">
               <p class="float-right">
                   <a href="#">Back to top</a>
               </p>
               <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-              <p>New to Bootstrap? <a href="{{ site.url }}/">Visit the homepage</a> or read our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started guide</a>.</p>
+              <p>New to Bootstrap? <a href="{{ site.url }}/">Visit the indexpage</a> or read our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started guide</a>.</p>
           </div>
-      </footer>
-    <script src="home.js"></script>
+      </footer> -->
+    <script src="index.js"></script>
+    <script src="search_button.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

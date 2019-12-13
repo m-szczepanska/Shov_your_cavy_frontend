@@ -12,49 +12,250 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
   background-color: #212529;
+  text-align: center !important;
+  line-height: 1.7;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-.form-signin .checkbox {
+#label-rate{
+  color: white;
+  margin-top: 10px;
+  font-size: 1.75rem;
   font-weight: 400;
 }
-.form-signin .form-control {
+
+.form-control {
+    height: calc(1.5em + .75rem + 1px);
+}
+.form-control:focus {
+    background-color: #bae4e8;
+}
+
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.container {
+    margin: auto;
+}
+
+.btn-pig-info-submit {
+    color: #fff !important;;
+    background-color: #007bff !important;;
+    border-color: #007bff !important;;
+}
+.btn-pig-info-submit:hover {
+    color: #fff !important;;
+    background-color: #0069d9 !important;;
+    border-color: #0062cc !important;;
+}
+.btn-pig-info-submit:active {
+    color: #fff !important;;
+    background-color: #0062cc !important;;
+    border-color: #005cbf !important;;
+}
+
+.form-signin-info-pig {
+  width: 100%;
+  max-width: 330px;
+  padding: 0px;
+  margin: auto;
+}
+.form-signin-info-pig .checkbox {
+  font-weight: 400;
+}
+.form-signin-info-pig .form-control {
   position: relative;
   box-sizing: border-box;
-  height: auto;
+  height: calc(4.25rem + 2px);
   padding: 10px;
   font-size: 16px;
 }
-.form-signin .form-control:focus {
+.form-signin-info-pig .form-control:focus {
   z-index: 2;
 }
 
-.form-signin input {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form-signin-info-pig input {
+  margin-bottom: 15px;
 }
 
-.form-signin h1{
+h3{
   color: white;
+  margin-top: 18px;
 }
 
 .rate-photo {
-  padding-top: 30px;
+  margin-top: 30px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  height: auto
+  height: auto;
+  border-radius: 20px;
 }
-/* .col-8 {
-  padding-top: 30px;
+
+#pig_info {
+  color: white;
+  padding-left: 38px;
+  padding-top: -3px;
 }
-.col-4 {
-  padding-top: 20px;
-} */
+
+.pig-info-title {
+    background-color: #1d3a69;
+    color: #fff;
+    padding: 3px 6px;
+    border: 2px #1d3a69 solid;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.input-group-text {
+    color: white;
+    background-color: #202429;
+    border: 0;
+}
+
+.form-signin-upload-pig {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-signin-upload-pig ol {
+  padding-left: 0;
+}
+
+.form-signin-upload-pig li, div > p {
+  display: block;
+  background: white;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.form-signin-upload-pig img {
+  padding-left: 3px;
+  height: 64px;
+  order: 1;
+}
+
+.form-signin-upload-pig p {
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+.form-signin-upload-pig input {
+    padding: 0px;
+    font-size: 0rem;
+
+}
+
+.form-signin-upload-pig label, .form-signin button {
+  background-color: #e6a30ade;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: 2px solid #e67a0a;
+  font-size: 1rem;
+  height: auto;
+  color: white;
+}
+
+.form-signin-upload-pig label:hover, .form-signin button:hover {
+  background-color: #e67a0a;
+  color: white;
+}
+
+.form-signin-upload-pig label:active, .form-signin button:active {
+  background-color: #e6510a;
+  color: white;
+}
+
+legend {
+    background-color: #1d3a69;
+    color: #fff;
+    padding: 3px 6px;
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+}
+
+fieldset {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-top: 0px;
+    margin-top: 2rem;
+    border: 2px #ff8d1e solid;
+}
+
+.searching-btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 9px 14px; /* Some padding */
+  margin-right: 0.5rem;
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.searching-btn:hover {
+  background-color: RoyalBlue;
+}
+
+.user-btn {
+  background-color: #ff8d1e; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 7px 14px; /* Some padding */
+  margin-left: 1rem;
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.user-btn:hover {
+  background-color:#cc7018;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  /* border-radius: 3px 0 0 3px; */
+}
+.prev {
+  left: 6px;
+  /* border-radius: 3px 0 0 3px; */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}

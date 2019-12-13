@@ -13,29 +13,30 @@
   <body class="text-center" >
       <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="home.html">Creatder</a>
+          <a class="navbar-brand" href="index.html">Creatder</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="get_all_creatures.html">All piggies<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="get_all_creatures.html?page=1">All piggies<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My piggies</a>
+                <a class="nav-link" href="user_piggies.html">My piggies</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My favourities</a>
+                <a class="nav-link" href="user_votes.html">My votes</a>
               </li>
-
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </form>
-            <button class="user-btn" type="submit" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
+          </ul>
+            <div class="form-inline mt-2 mt-md-0">
+            <!-- <form class="form-inline mt-2 mt-md-0" id="searchForm"> -->
+              <button class="searching-btn" type="submit" onclick="SearchFunction()"><i class="fa fa-search"></i></button>
+              <input class="form-control mr-sm-2" name="q" type="text" id="mySearch" placeholder="Search a pig">
+            <!-- </form> -->
+            <button class="user-btn" type="button" onclick="location.href='user_settings.html'"><i class="fa fa-user-circle"></i></button>
           </div>
+      </div>
         </nav>
       </header>
 
@@ -45,7 +46,7 @@
         <label for="inputName" class="sr-only">Name</label>
         <input type="name" id="inputName" class="my-form" placeholder="Name" required>
         <label for="inputAge" class="sr-only">Age</label>
-        <input type="integer" id="inputAge" class="my-form" placeholder="Age" required>
+        <input type="number" id="inputAge" class="my-form" step="1" pattern="\d+" placeholder="Age" required>
         <label for="inputSex" class="sr-only">Sex</label>
         <select id="inputSex" class="my-form" required>
             <option value=""disabled selected>--Choose a sex--</option>
@@ -103,6 +104,7 @@
         <button class="btn btn-lg btn-primary btn-block" id="add-btn" type="submit">Submit</button>
       </form>
     <script src="add_pig.js"></script>
+    <script src="search_button.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
