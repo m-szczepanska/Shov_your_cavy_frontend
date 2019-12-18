@@ -6,7 +6,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
 
   var query_token = window.location.search
   var token = query_token.slice(7)
-  var url = `http://localhost:8000/creatder/register/${token}/`
+  var url = `http://127.0.0.1:8000/creatder/register/${token}/`
   var params = {
       name: document.querySelector('#inputName').value,
       login: document.querySelector('#inputLogin').value,
@@ -21,7 +21,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201) {
           alert('You can log in now');
           console.log(xhr.responseText)
-          window.location.href = "file:///Users/marsza/workspace/zwierzu_front/login.html"
+          window.location.href = "file://login.html"
       }
   }
   xhr.send(JSON.stringify(params))

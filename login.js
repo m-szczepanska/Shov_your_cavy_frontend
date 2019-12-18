@@ -20,7 +20,7 @@ document.getElementById("login-btn").addEventListener("click", function(e){
       login: document.getElementById('inputLogin').value,
       password: document.getElementById('inputPassword').value
   };
-  var url = 'http://localhost:8000/creatder/login/'
+  var url = 'http://127.0.0.1:8000/creatder/login/'
   var xhr = new XMLHttpRequest()
   xhr.open('POST', url, true)
   xhr.setRequestHeader('Content-type', 'application/json')

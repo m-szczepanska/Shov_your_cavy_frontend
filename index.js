@@ -1,7 +1,7 @@
 
 window.onload = function loadDoc() {
     getResponse(
-        "http://localhost:8000/creatder/creatures_all/1/", "GET", "pig_target"
+        "http://127.0.0.1:8000/creatder/creatures_all/1/", "GET", "pig_target"
     );
 };
 
@@ -48,7 +48,7 @@ function multiplyDiv(ident, count, json, user_id) {
           element.innerHTML += `
           <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                  <img class="card-img-top" src="/Users/marsza/workspace/media/${info_photo}" alt="swinia" width="100%" height="250">
+                  <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
                   <div class="card-body">
                       <p class="card-text">Name: ${json[i]["name"]}</p>
                       <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>
@@ -68,7 +68,7 @@ function multiplyDiv(ident, count, json, user_id) {
         element.innerHTML += `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/Users/marsza/workspace/media/${info_photo}" alt="swinia" width="100%" height="250">
+                <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
                 <div class="card-body">
                     <p class="card-text">Name: ${json[i]["name"]}</p>
                     <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>

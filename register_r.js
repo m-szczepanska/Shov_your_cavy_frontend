@@ -4,7 +4,7 @@
 //         email: document.querySelector('#inputEmail').value
 //     }
 //     var xhr = new XMLHttpRequest()
-//     var url = 'http://localhost:8000/creatder/register_request/'
+//     var url = 'http://127.0.0.1:8000/creatder/register_request/'
 //     xhr.open('POST', url, true)
 //     xhr.setRequestHeader('Content-type', 'application/json')
 //     xhr.addEventListener('progress', function() {
@@ -18,7 +18,7 @@ document.getElementById("register-btn").addEventListener("click", function(e){
   var params = {
       email: document.getElementById('inputEmail').value
   };
-  var url = 'http://localhost:8000/creatder/register_request/'
+  var url = 'http://127.0.0.1:8000/creatder/register_request/'
   var xhr = new XMLHttpRequest()
   xhr.open('POST', url, true)
   xhr.setRequestHeader('Content-type', 'application/json')

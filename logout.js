@@ -22,7 +22,7 @@ document.getElementById('logout_link').addEventListener("click", function(e){
           window.location.href = "login.html"
       }
   };
-  xhttp.open("GET", "http://localhost:8000/creatder/logout", true);
+  xhttp.open("GET", "http://127.0.0.1:8000/creatder/logout", true);
   xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
   xhttp.send();
 });

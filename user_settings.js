@@ -3,7 +3,7 @@ window.onload = function getUserData() {
         user_id = localStorage.getItem("user_id");
         token = localStorage.getItem("token");
         getResponse(
-            `http://localhost:8000/creatder/users/${user_id}`, "GET", "formAjax"
+            `http://127.0.0.1:8000/creatder/users/${user_id}`, "GET", "formAjax"
         );
     } else {
       window.location.href = "login.html"
@@ -85,7 +85,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   var user_id = localStorage.getItem("user_id");
   var token = localStorage.getItem("token");
 
-  var url = `http://localhost:8000/creatder/users/${user_id}/`
+  var url = `http://127.0.0.1:8000/creatder/users/${user_id}/`
   var params = {
       name: document.querySelector('#inputName').value,
       email: document.querySelector('#inputEmail').value,
@@ -101,7 +101,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201 || xhr.readyState == 4 && xhr.status == 200) {
           alert('Your data has been changed');
           console.log(xhr.responseText)
-          window.location.href = "file:///Users/marsza/workspace/zwierzu_front/user_settings.html"
+          window.location.href = "file://user_settings.html"
       }
   }
   xhr.send(JSON.stringify(params))

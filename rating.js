@@ -6,11 +6,11 @@ window.onload = function getUserData() {
         urlParams = new URLSearchParams(window.location.search);
         id = urlParams.get('id');
         getCreatureDatails(
-            `http://localhost:8000/creatder/creatures/${id}/`,
+            `http://127.0.0.1:8000/creatder/creatures/${id}/`,
             "GET",
             "pig_info");
         getCreatureImage(
-            `http://localhost:8000/creatder/creatures/${id}/photos/`,
+            `http://127.0.0.1:8000/creatder/creatures/${id}/photos/`,
             "GET",
             "pig_image")
     }
@@ -120,7 +120,7 @@ document.getElementById("rate-btn").addEventListener("click", function(e){
       rating: document.getElementById('inputRating').value,
       comment: document.getElementById('inputComment').value,
   };
-  var url = `http://localhost:8000/creatder/creatures/${id}/rate_creature/`
+  var url = `http://127.0.0.1:8000/creatder/creatures/${id}/rate_creature/`
   var xhr = new XMLHttpRequest()
   xhr.open('POST', url, true)
   var auth_cred = `${user_id}:${token}`

@@ -3,7 +3,7 @@ window.onload = function loadDoc() {
     var query_page = window.location.search
     var user_id = localStorage.getItem("user_id");
     var page = query_page.slice(6)
-    var url = `http://localhost:8000/creatder/creatures_all/${page}/`
+    var url = `http://127.0.0.1:8000/creatder/creatures_all/${page}/`
     var ident = "pig_target"
 
     var xhttp = new XMLHttpRequest();
@@ -39,7 +39,7 @@ function multiplyDiv(ident, count, json, user_id) {
         element.innerHTML += `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="/Users/marsza/workspace/media/${info_photo}" alt="swinia" width="100%" height="250">
+                <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
                 <div class="card-body">
                     <p class="card-text">Name: ${json[i]["name"]}</p>
                     <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>
@@ -59,7 +59,7 @@ function multiplyDiv(ident, count, json, user_id) {
       element.innerHTML += `
       <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="/Users/marsza/workspace/media/${info_photo}" alt="swinia" width="100%" height="250">
+              <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
               <div class="card-body">
                   <p class="card-text">Name: ${json[i]["name"]}</p>
                   <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>

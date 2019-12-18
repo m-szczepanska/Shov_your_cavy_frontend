@@ -14,7 +14,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   var xhr = new XMLHttpRequest()
   // xhr.withCredentials = true;
 
-  var url = `http://localhost:8000/creatder/users/${user_id}/add_creature/`
+  var url = `http://127.0.0.1:8000/creatder/users/${user_id}/add_creature/`
   console.log(user_id);
   var params = {
       name: document.querySelector('#inputName').value,
@@ -34,7 +34,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201) {
           alert('The pig was added');
           console.log(xhr.responseText)
-          window.location.href = "file:///Users/marsza/workspace/zwierzu_front/user_piggies.html"
+          window.location.href = "file://user_piggies.html"
       }
       else if (xhr.readyState == 4 && xhr.status !== 201) {
           // window.location.href = `error_page.html?=${this.status}`

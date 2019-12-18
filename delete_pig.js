@@ -8,7 +8,7 @@ function delPig(pig_id) {
 
     if (window.confirm("Do you really want to delete this pig?")) {
 
-        var url = `http://localhost:8000/creatder/creatures/${pig_id}`;
+        var url = `http://127.0.0.1:8000/creatder/creatures/${pig_id}`;
         var xhr = new XMLHttpRequest();
         xhr.open("DELETE", url, true);
         xhr.setRequestHeader("Authorization", `${user_id}:${token}`);
