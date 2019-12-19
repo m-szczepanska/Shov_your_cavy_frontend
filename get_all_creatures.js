@@ -3,7 +3,7 @@ window.onload = function loadDoc() {
     var query_page = window.location.search
     var user_id = localStorage.getItem("user_id");
     var page = query_page.slice(6)
-    var url = `http://127.0.0.1:8000/creatder/creatures_all/${page}/`
+    var url = `http://localhost:8000/creatder/creatures_all/${page}/`
     var ident = "pig_target"
 
     var xhttp = new XMLHttpRequest();

@@ -14,7 +14,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   var xhr = new XMLHttpRequest()
   // xhr.withCredentials = true;
 
-  var url = `http://127.0.0.1:8000/creatder/users/${user_id}/add_creature/`
+  var url = `http://localhost:8000/creatder/users/${user_id}/add_creature/`
   console.log(user_id);
   var params = {
       name: document.querySelector('#inputName').value,

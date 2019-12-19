@@ -3,10 +3,10 @@ window.onload = function getUserData() {
         user_id = localStorage.getItem("user_id");
         token = localStorage.getItem("token");
         postResponse(
-            `http://127.0.0.1:8000/creatder/creatures/search/`, "POST"
+            `http://localhost:8000/creatder/creatures/search/`, "POST"
         );
         // getResponse(
-        //     `http://127.0.0.1:8000/creatder/creatures/search/`, "GET", "search_info"
+        //     `http://localhost:8000/creatder/creatures/search/`, "GET", "search_info"
         // );
     } else {
       window.location.href = "login.html"

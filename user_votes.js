@@ -4,7 +4,7 @@ window.onload = function getUserData() {
         user_id = localStorage.getItem("user_id");
         token = localStorage.getItem("token");
         getResponse(
-            `http://127.0.0.1:8000/creatder/users/${user_id}/ratings/`, "GET", "pig_target"
+            `http://localhost:8000/creatder/users/${user_id}/ratings/`, "GET", "pig_target"
         );
     } else {
         alert("You are not logged in, your piggies too!")

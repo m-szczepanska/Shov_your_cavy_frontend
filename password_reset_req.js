@@ -2,7 +2,7 @@ document.getElementById("submit-btn").addEventListener("click", function(e){
   var params = {
       email: document.getElementById('inputEmail').value
   };
-  var url = 'http://127.0.0.1:8000/creatder/password_reset_request/'
+  var url = 'http://localhost:8000/creatder/password_reset_request/'
   var xhr = new XMLHttpRequest()
   xhr.open('POST', url, true)
   xhr.setRequestHeader('Content-type', 'application/json')

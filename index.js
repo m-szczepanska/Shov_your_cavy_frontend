@@ -1,7 +1,7 @@
 
 window.onload = function loadDoc() {
     getResponse(
-        "http://127.0.0.1:8000/creatder/creatures_all/1/", "GET", "pig_target"
+        "http://localhost:8000/creatder/creatures_all/1/", "GET", "pig_target"
     );
 };
 

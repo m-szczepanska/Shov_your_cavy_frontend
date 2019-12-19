@@ -6,11 +6,11 @@ window.onload = function getUserData() {
         urlParams = new URLSearchParams(window.location.search);
         id = urlParams.get('id');
         getCreatureDatails(
-            `http://127.0.0.1:8000/creatder/creatures/${id}`,
+            `http://localhost:8000/creatder/creatures/${id}`,
             "GET",
             "formAjax");
         getCreatureImage(
-            `http://127.0.0.1:8000/creatder/creatures/${id}/photos/`,
+            `http://localhost:8000/creatder/creatures/${id}/photos/`,
             "GET",
             "pig_image")
     }
@@ -193,7 +193,7 @@ function delPigImage() {
         var id = urlParams.get('id');
         console.log('THE PIG', pig_image_id);
         var xhr = new XMLHttpRequest();
-        xhr.open("DELETE", `http://127.0.0.1:8000/creatder/creatures/${id}/photos/${pig_image_id}/`, true);
+        xhr.open("DELETE", `http://localhost:8000/creatder/creatures/${id}/photos/${pig_image_id}/`, true);
         xhr.onreadystatechange = function() {
             if(xhr.readyState == 4 && xhr.status == 204 || xhr.readyState == 4 && xhr.status == 200) {
                 alert('Photo deleted');
@@ -283,7 +283,7 @@ form.addEventListener('submit', function(e) {
       input_data = new FormData(form);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", `http://127.0.0.1:8000/creatder/creatures/${id}/photos/`, true);
+  xhr.open("POST", `http://localhost:8000/creatder/creatures/${id}/photos/`, true);
   xhr.onload = function(oEvent) {
     if (xhr.status == 201) {
       alert("Uploaded!");
@@ -306,7 +306,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   urlParams = new URLSearchParams(window.location.search);
   var pig_id = urlParams.get('id');
 
-  var url = `http://127.0.0.1:8000/creatder/creatures/${pig_id}/`
+  var url = `http://localhost:8000/creatder/creatures/${pig_id}/`
 
   var params = {
       name: document.querySelector('#inputName').value,

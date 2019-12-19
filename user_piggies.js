@@ -4,7 +4,7 @@ window.onload = function getUserData() {
         user_id = localStorage.getItem("user_id");
         token = localStorage.getItem("token");
         getResponse(
-            `http://127.0.0.1:8000/creatder/users/${user_id}/creatures/`, "GET", "pig_target"
+            `http://localhost:8000/creatder/users/${user_id}/creatures/`, "GET", "pig_target"
         );
     } else {
         alert("You are not logged in, your piggies too!")
@@ -83,7 +83,7 @@ function delPig(pig_id) {
 
     if (window.confirm("Do you really want to delete this pig?")) {
 
-        var url = `http://127.0.0.1:8000/creatder/creatures/${pig_id}`;
+        var url = `http://localhost:8000/creatder/creatures/${pig_id}`;
         var xhr = new XMLHttpRequest();
         xhr.open("DELETE", url, true);
         xhr.setRequestHeader("Authorization", `${user_id}:${token}`);
