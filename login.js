@@ -2,7 +2,7 @@
 
 function store_token_helper_and_redirect(response) {
     console.log(response);
-    if (localStorage.length == 0) {
+    if !(localStorage.user_id) {
       var user_id_value = JSON.parse(response.response).user_id
       var token_value = JSON.parse(response.response).uuid
 
