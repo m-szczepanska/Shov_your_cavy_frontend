@@ -1,6 +1,6 @@
 window.onload = function loadDoc() {
     var query_error = window.location.search
-    var error_num = query_error.slice(7)
+    var error_num = query_error.slice(1)
     console.log(window.location.search)
     console.log(error_num.slice(1))
 

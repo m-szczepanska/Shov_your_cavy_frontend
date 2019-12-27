@@ -20,7 +20,6 @@ function getCreatureDatails(url, method, ident) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
-        // readyState == 4 - response fully received
         if (this.readyState == 4 && this.status == 200) {
             var parsed = JSON.parse(this.response);
             innerHTMLresponse(ident, parsed);
@@ -33,7 +32,6 @@ function getCreatureDatails(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 }
 
@@ -50,7 +48,6 @@ function getCreatureImage(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 }
 
@@ -328,7 +325,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
 
       }
       else if (xhr.readyState == 4 && xhr.status !== 201 || xhr.readyState == 4 && xhr.status !== 200) {
-          // window.location.href = `error_page.html?=${this.status}`
+          window.location.href = `error_page.html?=${this.status}`
           console.log(xhr.response)
       }
   }

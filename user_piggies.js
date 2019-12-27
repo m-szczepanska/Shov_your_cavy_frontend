@@ -40,9 +40,9 @@ function multiplyDiv(ident, count, json) {
     if (count > 0) {
         for (var i=0; i<count; i++) {
           if (json[i]["creature_card_photo"] == null) {
-              var info_photo = "photo_info.png"
+              var info_photo = "pictures/pig_not_found.png"
           } else {
-              var info_photo = json[i]["creature_card_photo"]
+              var info_photo = "/Users/marsza/workspace/media/" + json[i]["creature_card_photo"]
           }
           element.innerHTML +=
           `<hr class="featurette-divider">
@@ -59,7 +59,7 @@ function multiplyDiv(ident, count, json) {
                 <ul>
               </div>
               <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="../${info_photo}" alt="swinia" width="500" height="500">
+                <img class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="${info_photo}" alt="swinia" width="500" height="500">
               </div>
             </div>` }
     } else {

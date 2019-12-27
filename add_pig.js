@@ -1,3 +1,4 @@
+
 window.onload = function getUserData() {
 
     if (localStorage.user_id) {
@@ -34,10 +35,10 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201) {
           alert('The pig was added');
           console.log(xhr.responseText)
-          window.location.href = "file://user_piggies.html"
+          window.location.href = "user_piggies.html"
       }
       else if (xhr.readyState == 4 && xhr.status !== 201) {
-          // window.location.href = `error_page.html?=${this.status}`
+          window.location.href = `error_page.html?=${this.status}`
           console.log(xhr.response)
       }
   }

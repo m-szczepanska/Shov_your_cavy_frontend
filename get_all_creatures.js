@@ -25,21 +25,20 @@ window.onload = function loadDoc() {
 
 
 function multiplyDiv(ident, count, json, user_id) {
-    console.log(json);
     var element = document.getElementById(ident);
     for (var i=0; i<count; i++) {
-        console.log(json[i]["creature_card_photo"])
       if (json[i]["creature_card_photo"] == null) {
-          var info_photo = "photo_info.png"
+          var info_photo = "pictures/pig_not_found.png"
       } else {
-          var info_photo = json[i]["creature_card_photo"]
+          var info_photo = "/Users/marsza/workspace/media/" + json[i]["creature_card_photo"]
+          console.log(info_photo);
       }
       if (json[i]["owner"]["id"] == user_id) {
 
         element.innerHTML += `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
+                <img class="card-img-top" src="${info_photo}" alt="swinia" width="100%" height="250">
                 <div class="card-body">
                     <p class="card-text">Name: ${json[i]["name"]}</p>
                     <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>
@@ -59,7 +58,7 @@ function multiplyDiv(ident, count, json, user_id) {
       element.innerHTML += `
       <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="../${info_photo}" alt="swinia" width="100%" height="250">
+              <img class="card-img-top" src="${info_photo}" alt="swinia" width="100%" height="250">
               <div class="card-body">
                   <p class="card-text">Name: ${json[i]["name"]}</p>
                   <p class="card-text">Owner: ${json[i]["owner"]["login"]}</p>
