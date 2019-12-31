@@ -41,7 +41,7 @@ function multiplyDiv(ident, count, json, user_id) {
         if (json[i]["creature_card_photo"] == null) {
             var info_photo = "pictures/pig_not_found.png"
         } else {
-            var info_photo = "/Users/marsza/workspace/media/" + json[i]["creature_card_photo"]
+            var info_photo="/Users/marsza/workspace/media/" + json[i]["creature_card_photo"]
         }
         if (json[i]["owner"]["id"] == user_id) {
           console.log('dzial')

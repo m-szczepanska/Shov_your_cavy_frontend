@@ -21,7 +21,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201) {
           alert('You can log in now');
           console.log(xhr.responseText)
-          window.location.href = "file://login.html"
+          window.location.href = "login.html"
       }
   }
   xhr.send(JSON.stringify(params))

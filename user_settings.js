@@ -101,7 +101,7 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       if(xhr.readyState == 4 && xhr.status == 201 || xhr.readyState == 4 && xhr.status == 200) {
           alert('Your data has been changed');
           console.log(xhr.responseText)
-          window.location.href = "file://user_settings.html"
+          window.location.href = "user_settings.html"
       }
   }
   xhr.send(JSON.stringify(params))
