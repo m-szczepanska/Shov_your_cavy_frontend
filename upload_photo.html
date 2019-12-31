@@ -43,7 +43,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-8" id="pig_image">
-              <a class="remove-image" href="#" onclick="delPigImage()">&#215;</a>
+              <a class="remove-image" href="#" onclick="delPigImage()" hidden>&#215;</a>
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
               <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
@@ -56,8 +56,10 @@
                       <legend>Upload a photo</legend>
                   <label for="file"><i class="fa fa-upload"></i></label>
                   <input type="file" name="file" id="file" required />
+                  <progress id="progressBar" value="0" max="100" style="width:250px;" hidden></progress>
+                  <p id="status" hidden></p>
                   <div class="preview">
-                    <p>No files currently selected for upload</p>
+                      <p>No files currently selected for upload</p>
                   </div>
                   <button class="btn btn-primary btn-block" id="submit-btn" type="submit">Submit photo</button>
                   </fieldset>

@@ -177,47 +177,55 @@ function plusSlides(n) {showSlides(slideIndex += n);}
 
 function currentSlide(n) {showSlides(slideIndex = n);}
 
-function delPigImage() {
-    if (localStorage.pig_image_id) {
-        pig_image_id = localStorage.getItem("pig_image_id");
-
-    } else {
-          console.log("You can't delete this photo")
-    }
-
-    if (window.confirm("Do you really want to delete this photo?")) {
-        urlParams = new URLSearchParams(window.location.search);
-        var id = urlParams.get('id');
-        console.log('THE PIG', pig_image_id);
-        var xhr = new XMLHttpRequest();
-        xhr.open("DELETE", `http://localhost:8000/creatder/creatures/${id}/photos/${pig_image_id}/`, true);
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4 && xhr.status == 204 || xhr.readyState == 4 && xhr.status == 200) {
-                alert('Photo deleted');
-
-                location.reload()
-            } else {
-        		console.log('something wrong');
-        	}
-        }
-        xhr.send();
-    }
-}
-
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("rate-photo");
-    // slides.innerHTML += `<a class="remove-image" href="#" style="display: inline;">&#215;</a>`
 
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    slides[slideIndex-1].style.display = "block";
+    if (slides.length) {
+        slides[slideIndex-1].style.display = "block";
+        var pig_image_id = `${slides[slideIndex-1].id}`;
+        localStorage.setItem("pig_image_id", pig_image_id);
+        document.querySelector(".remove-image").hidden = false;
+    }
+    else {localStorage.removeItem("pig_image_id");}
+}
 
-    var pig_image_id = `${slides[slideIndex-1].id}`;
-    localStorage.setItem("pig_image_id", pig_image_id)
+// Remove photo
+
+function delPigImage() {
+    if (localStorage.pig_image_id) {
+        pig_image_id = localStorage.getItem("pig_image_id");
+
+    } else {
+        console.log("You can't delete this photo")
+    }
+
+    if (window.confirm("Do you really want to delete this photo?")) {
+        urlParams = new URLSearchParams(window.location.search);
+        var id = urlParams.get('id');
+        console.log('THE PIG', pig_image_id);
+        user_id = localStorage.getItem("user_id");
+        token = localStorage.getItem("token");
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", `http://localhost:8000/creatder/creatures/${id}/photos/${pig_image_id}/`, true);
+        xhr.setRequestHeader("Authorization", `${user_id}:${token}`);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 204 || xhr.readyState == 4 && xhr.status == 200) {
+                localStorage.removeItem("pig_image_id");
+                alert('Photo deleted');
+                location.reload()
+            } else {
+        		console.error('something wrong');
+        	}
+        }
+        xhr.send();
+    }
 }
 
 // Upload photo
@@ -228,7 +236,7 @@ var preview = document.querySelector('.preview');
 myinput.style.opacity = 0;
 myinput.addEventListener('change', updateImageDisplay);
 
-
+// Show a icon of a photo chosen to upload
 function updateImageDisplay() {
   while(preview.firstChild) {
     preview.removeChild(preview.firstChild);
@@ -244,7 +252,9 @@ function updateImageDisplay() {
     for(var i = 0; i < curFiles.length; i++) {
       var listItem = document.createElement('li');
       var para = document.createElement('p');
-      if(curFiles[i]) {
+      // max photo size - 15 MB
+      var max_photo_size = 1048576 * 15;
+      if(curFiles[i].size <= max_photo_size) {
         para.textContent = 'File name ' + curFiles[i].name + ', file size ' + returnFileSize(curFiles[i].size) + '.';
         var image = document.createElement('img');
         image.src = window.URL.createObjectURL(curFiles[i]);
@@ -253,7 +263,7 @@ function updateImageDisplay() {
         listItem.appendChild(para);
 
       } else {
-        para.textContent = 'File name ' + curFiles[i].name + ': Not a valid file type. Update your selection.';
+        para.textContent = 'Upload file not biger then 15 MB.';
         listItem.appendChild(para);
       }
 
@@ -272,7 +282,7 @@ function returnFileSize(number) {
   }
 }
 
-
+// Upload photo and show progress bar
 var form = document.forms.namedItem("fileinfo");
 form.addEventListener('submit', function(e) {
 
@@ -280,7 +290,10 @@ form.addEventListener('submit', function(e) {
       input_data = new FormData(form);
 
   var xhr = new XMLHttpRequest();
+  xhr.upload.addEventListener("progress", progressHandler, false);
+  xhr.addEventListener("load", completeHandler, false);
   xhr.open("POST", `http://localhost:8000/creatder/creatures/${id}/photos/`, true);
+
   xhr.onload = function(oEvent) {
     if (xhr.status == 201) {
       alert("Uploaded!");
@@ -289,11 +302,30 @@ form.addEventListener('submit', function(e) {
       alert("Error " + xhr.status + " occurred when trying to upload your file.<br \/>");
     }
   };
-
   xhr.send(input_data);
   e.preventDefault();
 }, false);
 
+
+function progressHandler(event) {
+  var percent = (event.loaded / event.total) * 100;
+  document.getElementById("progressBar").value = Math.round(percent);
+  document.getElementById("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+}
+
+function completeHandler(event) {
+  document.getElementById("status").innerHTML = event.target.responseText;
+  // document.getElementById("progressBar").value = 0;
+}
+
+document.getElementById("submit-btn").addEventListener("click", function() {
+  document.querySelector('.preview').hidden = true;
+  document.getElementById("progressBar").hidden = false;
+  document.getElementById("status").hidden = false;
+}, false);
+
+
+// Update info about a pig
 
 document.querySelector('#formAjax').addEventListener("submit", function(e){
   e.preventDefault();

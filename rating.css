@@ -194,6 +194,7 @@ fieldset {
     padding-top: 0px;
     margin-top: 2rem;
     border: 2px #ff8d1e solid;
+    background: white;
 }
 
 .searching-btn {
