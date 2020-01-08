@@ -5,9 +5,6 @@ window.onload = function getUserData() {
         postResponse(
             `http://localhost:8000/creatder/creatures/search/`, "POST"
         );
-        // getResponse(
-        //     `http://localhost:8000/creatder/creatures/search/`, "GET", "search_info"
-        // );
     } else {
       window.location.href = "login.html"
     }
@@ -37,8 +34,7 @@ function postResponse(url, method) {
         }
     }
     xhr.send(JSON.stringify(params))
-
-  };
+};
 
 
 function innerHTMLresponse(json, count, ident) {
@@ -47,10 +43,17 @@ function innerHTMLresponse(json, count, ident) {
     var element = document.getElementById(ident);
     if (count > 0) {
       for (var i=0; i<count; i++) {
-          var num = 1+i;
+        var num = 1+i;
+        if (json[i]["owner"]["id"] == localStorage.getItem("user_id")) {
+            var url_redirect = 'upload_photo';
+        }
+        else {
+            var url_redirect = 'rating';
+        }
+        console.log(json[i]["owner"]["id"], localStorage.getItem("user_id"))
         element.innerHTML += `
         <div class="container">
-            <a href='rating.html?id=${json[i]["id"]}'><strong>${num}. ${json[i]["name"]}</strong></a>
+            <a href='${url_redirect}.html?id=${json[i]["id"]}'><strong>${num}. ${json[i]["name"]}</strong></a>
             <p>
             <strong>Age</strong>: ${json[i]["age"]},
             <strong>Sex</strong>: ${json[i]["sex"]},
