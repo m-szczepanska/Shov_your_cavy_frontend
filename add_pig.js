@@ -16,7 +16,6 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   // xhr.withCredentials = true;
 
   var url = `http://localhost:8000/creatder/users/${user_id}/add_creature/`
-  console.log(user_id);
   var params = {
       name: document.querySelector('#inputName').value,
       age: document.querySelector('#inputAge').value,
@@ -34,12 +33,10 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   xhr.onreadystatechange = function() {
       if(xhr.readyState == 4 && xhr.status == 201) {
           alert('The pig was added');
-          console.log(xhr.responseText)
           window.location.href = "user_piggies.html"
       }
       else if (xhr.readyState == 4 && xhr.status !== 201) {
           window.location.href = `error_page.html?=${this.status}`
-          console.log(xhr.response)
       }
   }
   xhr.send(JSON.stringify(params))

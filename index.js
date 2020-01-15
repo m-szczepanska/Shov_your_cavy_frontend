@@ -7,7 +7,6 @@ window.onload = function loadDoc() {
 
 function getResponse(url, method, ident) {
     var xhttp = new XMLHttpRequest();
-    console.log(localStorage.length)
 
     if (localStorage.length !== 0) {
         var user_id = localStorage.getItem("user_id");
@@ -19,7 +18,6 @@ function getResponse(url, method, ident) {
     xhttp.onreadystatechange = function() {
         // readyState == 4 - response fully received
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this)
             var parsed = JSON.parse(this.response);
             multiplyDiv(ident, parsed.objects.length, parsed.objects, user_id);
         }
@@ -28,7 +26,6 @@ function getResponse(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 };
 
@@ -44,7 +41,6 @@ function multiplyDiv(ident, count, json, user_id) {
             var info_photo="/Users/marsza/workspace/media/" + json[i]["creature_card_photo"]
         }
         if (json[i]["owner"]["id"] == user_id) {
-          console.log('dzial')
           element.innerHTML += `
           <div class="col-md-4">
               <div class="card mb-4 shadow-sm">

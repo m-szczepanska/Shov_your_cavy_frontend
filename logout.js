@@ -2,7 +2,6 @@ document.getElementById('logout_link').addEventListener("click", function(e){
   e.preventDefault();
 
   var xhttp = new XMLHttpRequest();
-  console.log(xhttp)
   if (localStorage.length !== 0) {
       var user_id = localStorage.getItem("user_id");
       var token = localStorage.getItem("token");
@@ -18,7 +17,6 @@ document.getElementById('logout_link').addEventListener("click", function(e){
           alert('You are log out now');
           localStorage.removeItem('token')
           localStorage.removeItem('user_id')
-          console.log(this)
           window.location.href = "login.html"
       }
   };

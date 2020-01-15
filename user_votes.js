@@ -30,12 +30,10 @@ function getResponse(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 };
 
 function multiplyDiv(ident, count, json) {
-    console.log(json);
     var element = document.getElementById(ident);
     if (count > 0) {
         for (var i=0; i<count; i++) {

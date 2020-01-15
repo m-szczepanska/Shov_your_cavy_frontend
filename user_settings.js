@@ -21,7 +21,6 @@ function getResponse(url, method, ident) {
         }
         else if (this.readyState == 4 && this.status !== 200) {
             // window.location.href = `error_page.html?=${this.status}`
-            console.log(this.response)
         }
     };
 
@@ -33,7 +32,6 @@ function getResponse(url, method, ident) {
 };
 
 function innerHTMLresponse(json, ident) {
-    console.log(json);
     var element = document.getElementById(ident);
 
   element.innerHTML +=
@@ -100,7 +98,6 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
   xhr.onreadystatechange = function() {
       if(xhr.readyState == 4 && xhr.status == 201 || xhr.readyState == 4 && xhr.status == 200) {
           alert('Your data has been changed');
-          console.log(xhr.responseText)
           window.location.href = "user_settings.html"
       }
   }

@@ -52,7 +52,6 @@ function getCreatureImage(url, method, ident) {
 }
 
 function innerHTMLresponse(ident, json) {
-    console.log(json);
     var element = document.getElementById(ident);
     if (json["crossed_rainbow_bridge"] == true) {
         var crb = "False";
@@ -160,7 +159,6 @@ function innerHTMLresponse(ident, json) {
 
 
 function multiplyDiv(ident, count, json) {
-    console.log(json);
     var element = document.getElementById(ident);
     for (var i=0; i<count; i++)
         element.innerHTML +=
@@ -208,7 +206,6 @@ function delPigImage() {
     if (window.confirm("Do you really want to delete this photo?")) {
         urlParams = new URLSearchParams(window.location.search);
         var id = urlParams.get('id');
-        console.log('THE PIG', pig_image_id);
         user_id = localStorage.getItem("user_id");
         token = localStorage.getItem("token");
 
@@ -358,7 +355,6 @@ document.querySelector('#formAjax').addEventListener("submit", function(e){
       }
       else if (xhr.readyState == 4 && xhr.status !== 201 || xhr.readyState == 4 && xhr.status !== 200) {
           window.location.href = `error_page.html?=${this.status}`
-          console.log(xhr.response)
       }
   }
   xhr.send(JSON.stringify(params))

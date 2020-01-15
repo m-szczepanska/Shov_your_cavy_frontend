@@ -32,7 +32,6 @@ function getCreatureDatails(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 }
 
@@ -49,12 +48,10 @@ function getCreatureImage(url, method, ident) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Authorization", `${user_id}:${token}`);
     xhttp.send();
-    console.log(xhttp.responseText);
     return xhttp.response;
 }
 
 function innerHTMLresponse(ident, json) {
-    console.log(json);
     var element = document.getElementById(ident);
       element.innerHTML += `
             <div class="row">
@@ -84,7 +81,6 @@ function innerHTMLresponse(ident, json) {
 }
 
 function multiplyDiv(ident, count, json) {
-    console.log(json);
     var element = document.getElementById(ident);
     for (var i=0; i<count; i++)
         element.innerHTML +=
@@ -104,7 +100,7 @@ function currentSlide(n) {showSlides(slideIndex = n);}
 function showSlides(n, count) {
     var i;
     var slides = document.getElementsByClassName("rate-photo");
-    console.log(slides)
+
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -128,7 +124,6 @@ document.getElementById("rate-btn").addEventListener("click", function(e){
   xhr.setRequestHeader('Content-type', 'application/json')
   xhr.onreadystatechange = function() {
       if(xhr.readyState == 4 && xhr.status == 201) {
-          console.log(xhr)
           alert('Your rate was submitted.');
           location.reload();
         }

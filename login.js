@@ -1,7 +1,6 @@
 
 
 function store_token_helper_and_redirect(response) {
-    console.log(response);
     if (!localStorage.user_id) {
       var user_id_value = JSON.parse(response.response).user_id
       var token_value = JSON.parse(response.response).uuid
@@ -26,7 +25,6 @@ document.getElementById("login-btn").addEventListener("click", function(e){
   xhr.setRequestHeader('Content-type', 'application/json')
   xhr.onreadystatechange = function() {
       if(xhr.readyState == 4 && xhr.status == 201) {
-          console.log(xhr)
           alert('You are now logged in.');
           store_token_helper_and_redirect(xhr);
         }

@@ -15,7 +15,6 @@ function postResponse(url, method) {
 
     var query_search = window.location.search
     var search_phrase = query_search.slice(2)
-    console.log(search_phrase)
 
     var params = {
         search_field: search_phrase
@@ -28,7 +27,6 @@ function postResponse(url, method) {
 
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 201 || xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.responseText)
             var parsed = JSON.parse(this.response);
             innerHTMLresponse(parsed, parsed.length, 'search-result');
         }
@@ -38,8 +36,6 @@ function postResponse(url, method) {
 
 
 function innerHTMLresponse(json, count, ident) {
-    console.log(json);
-    console.log(count);
     var element = document.getElementById(ident);
     if (count > 0) {
       for (var i=0; i<count; i++) {
@@ -50,7 +46,7 @@ function innerHTMLresponse(json, count, ident) {
         else {
             var url_redirect = 'rating';
         }
-        console.log(json[i]["owner"]["id"], localStorage.getItem("user_id"))
+        
         element.innerHTML += `
         <div class="container">
             <a href='${url_redirect}.html?id=${json[i]["id"]}'><strong>${num}. ${json[i]["name"]}</strong></a>
