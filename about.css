@@ -1,0 +1,76 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial !important;
+  color: black;
+  background-color: #fff;
+  /* flex-direction: column; */
+}
+
+
+.h2-searching {
+    margin:auto;
+}
+
+.container {
+  margin:auto;
+  text-align: left!important;
+}
+
+.nav-background-color {
+    width: 100%;
+    margin:auto;
+    padding-top: 30px;
+    background-color: white;
+}
+.col-7 {
+    background-color: #f8f9fa;
+    margin:auto;
+    padding: 20px;
+}
+.col-4 {
+    background-color: #f8f9fa;
+    padding: 20px;
+
+}
+
+h2 {
+    color: black;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: left!important;
+}
+
+
+.searching-btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 9px 14px; /* Some padding */
+  margin-right: 0.5rem;
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.searching-btn:hover {
+  background-color: RoyalBlue;
+}
+
+.user-btn {
+  background-color: #ff8d1e; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: .25rem;
+  color: white; /* White text */
+  padding: 7px 14px; /* Some padding */
+  margin-left: 1rem;
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.user-btn:hover {
+  background-color:#cc7018;
+}

@@ -6,8 +6,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="user_settings.css" rel="stylesheet">
-        <title>User settings</title>
+    <link href="about.css" rel="stylesheet">
+        <title>About</title>
     </head>
     <body class="text-center">
         <header>
@@ -27,7 +27,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="user_votes.html">My votes</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="about.html">About Squeakoo</a>
                 </li>
             </ul>
@@ -41,18 +41,47 @@
         </div>
           </nav>
         </header>
+        <!-- <nav class="nav-background-color"> -->
+            <div class="container">
+                <h2 class="all-piggies">About</h2>
+                <div class="row">
+                    <div class="col-7 ">
+                        <p>The story of Squeakoo</p>
+                        <p>I started out wanting to write a simple hobby project with Django REST as an exercise (and to pad my portfolio). When working on the first models I envisioned expanding the project and creating a Tinder-like app for animals in animal shelters. The Tinder-like app turned out more complex than expected and has been shelved... for now.</p>
 
-        <h2 class="all-piggies">User info</h2>
-        <nav class="nav-background-color">
-        <form class="form-signin" id="formAjax">
-        </form>
-          <div class="row my-3 justify-content-md-center">
-              <button class="btn btn-md btn-warning my-3 mx-4"  id="logout_link" type="submit">Log out</button>
-              <button class="btn btn-md btn-info my-3" id="password_link" onclick="location.href='password_reset_req.html'" type="button">Change password</button>
-          </div>
-        </nav>
+                        <p>I created Squeakoo as a stepping stone towards that app - a simple site for cavy (for civilians: guinea pigs) owners where they can share the photos of their cavies and rate other user piggies.</p>
 
-       <script src="user_settings.js"></script>
+                            <p>The app is obviously not perfect - but it is launched, and that counts for something.</p>
+
+                            <p>May the Squeak be with you,</p>
+                            <p>Maria</p>
+                            <p>PS. If you have any suggestions, noticed any bugs or would like to request features - don't hesitate to contact me!</p>
+                    </div>
+                    <div class="col-4">
+                        <p><i class="fa fa-github"></i> Repo on Github:</p>
+                        <ul>
+                            <li><a href="https://github.com/m-szczepanska/Show_your_cavy">github.com/m-szczepanska/Show_your_cavy</a></li>
+                            <li><a href="https://github.com/m-szczepanska/Shov_your_cavy_frontend">github.com/m-szczepanska/Shov_your_cavy_frontend</a></li>
+                        </ul>
+                        <hr>
+                        <p><i class="fa fa-linkedin"></i>  My Linkedin profile:</p>
+                        <a href="https://www.linkedin.com/in/maria-m-szczepanska/">www.linkedin.com/in/maria-m-szczepanska</a>
+                        <hr>
+                        <p><i class="fa fa-envelope"></i>  My mail adress:</p>
+                        <address>
+                            <a href="mailto:maria.m.szczepanska@gmail.com">maria.m.szczepanska(at)gmail(dot)com</a>
+                        </address>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        <!-- </nav> -->
+
+       <script src="index.js"></script>
        <script src="logout.js"></script>
        <script src="search_button.js"></script>
        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
